@@ -1,0 +1,16 @@
+package com.spring.demo.dto;
+
+import com.spring.demo.model.Utilisiateur;
+
+import jakarta.persistence.ManyToOne;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class RoleDto {
+
+	private String code;
+	private Utilisiateur utilisateur;
+
+}

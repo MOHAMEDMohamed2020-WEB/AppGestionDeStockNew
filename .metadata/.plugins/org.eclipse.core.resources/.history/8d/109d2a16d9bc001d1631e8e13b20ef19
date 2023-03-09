@@ -1,0 +1,19 @@
+package com.spring.demo.dto;
+
+import java.math.BigDecimal;
+import java.time.Instant;
+import com.spring.demo.model.Article;
+import com.spring.demo.model.TypeMvtStk;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class MtvStkDto {
+
+	private Instant dateMvt;
+	private BigDecimal quantite;
+	private TypeMvtStk typeMvt;
+	private Article article;
+
+}

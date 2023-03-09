@@ -1,0 +1,29 @@
+package com.spring.demo.dto;
+
+import java.time.Instant;
+import java.util.List;
+
+import com.spring.demo.model.Adresse;
+import com.spring.demo.model.Entreprise;
+import com.spring.demo.model.Role;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class UtilisiateurDto {
+
+	private Integer id;
+	private String nom;
+	private String prenom;
+	private Adresse adresse;
+	private String email;
+	private Instant dateDeNaissance;
+	private String motDePasse;
+	private String photo;
+	private Entreprise entreprise;
+	private List<Role> roles;
+	private String mail;
+	private String numTel;
+
+}

@@ -1,0 +1,25 @@
+package com.spring.demo.dto;
+
+import java.time.Instant;
+import java.util.List;
+
+import com.spring.demo.model.Fournisseur;
+import com.spring.demo.model.LigneCommandeFournisseur;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class CommandeFournisseurDto {
+
+	private Integer id;
+	private String code;
+	private Instant dateCommande;
+	private Fournisseur fournisseur;
+	private List<LigneCommandeFournisseur> listLigneCommandeFournisseur;
+
+}

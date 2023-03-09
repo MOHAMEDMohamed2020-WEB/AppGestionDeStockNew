@@ -1,0 +1,49 @@
+package com.spring.demo.dto;
+
+import java.math.BigDecimal;
+
+import com.spring.demo.model.Article;
+import com.spring.demo.model.CommandeClient;
+import com.spring.demo.model.Fournisseur;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class LigneCommandeClientDto {
+
+	private Integer id;
+	private Article article;
+	private CommandeClient commandeClient;
+	private BigDecimal quantite;
+	private BigDecimal prixUnitaire;
+	
+	public LigneCommandeClientDto fromEntity(Fournisseur fournisseur) {
+		if (fournisseur == null)
+			return null;
+		return LigneCommandeClientDto.builder()
+				.id(fournisseur.getId())
+				.nom(fournisseur.getNom())
+				.prenom(fournisseur.getPrenom())
+				.adresse(fournisseur.getAdresse())
+				.photo(fournisseur.getPhoto())
+				.mail(fournisseur.getMail())
+				.numTel(fournisseur.getNumTel())
+				.build();
+	}
+	public Fournisseur toEntity(LigneCommandeClientDto ligneCommandeClientDto) {
+		if (ligneCommandeClientDto == null)
+			return null;
+		Fournisseur fournisseur = new Fournisseur();
+		fournisseur.setId(ligneCommandeClientDto.getId());
+		fournisseur.setNom(ligneCommandeClientDto.getNom());
+		fournisseur.setPrenom(ligneCommandeClientDto.getPrenom());
+		fournisseur.setAdresse(ligneCommandeClientDto.getAdresse());
+		fournisseur.setPhoto(ligneCommandeClientDto.getPhoto());
+		fournisseur.setMail(ligneCommandeClientDto.getMail());
+		fournisseur.setNumTel(ligneCommandeClientDto.getNumTel());
+		return fournisseur;
+	}
+
+}

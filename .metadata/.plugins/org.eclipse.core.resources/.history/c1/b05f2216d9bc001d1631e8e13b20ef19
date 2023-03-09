@@ -1,0 +1,17 @@
+package com.spring.demo.dto;
+
+import java.time.Instant;
+import java.util.List;
+import com.spring.demo.model.LigneVente;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class VentesDto {
+	
+	private String code;
+	private Instant dateVente;
+	private List<LigneVente> listLigneVentes;
+
+}

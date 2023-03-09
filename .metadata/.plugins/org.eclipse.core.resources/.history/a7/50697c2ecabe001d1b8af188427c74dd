@@ -1,0 +1,43 @@
+package com.spring.demo.service.impl;
+
+import java.util.List;
+import org.springframework.stereotype.Service;
+import com.spring.demo.dto.ArticleDto;
+import com.spring.demo.service.ArticleService;
+import lombok.extern.log4j.Log4j;
+
+@Service
+//@Log4j
+public class ArticleServiceImpl implements ArticleService {
+
+	@Override
+	public ArticleDto save(ArticleDto dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArticleDto findById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArticleDto findByCodeArticle(String codeArticle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ArticleDto> findAll(ArticleDto dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

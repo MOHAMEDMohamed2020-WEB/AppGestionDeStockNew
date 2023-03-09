@@ -1,0 +1,24 @@
+package com.spring.demo.dto;
+
+import java.time.Instant;
+import java.util.List;
+
+import com.spring.demo.model.Client;
+import com.spring.demo.model.LigneCommandeClient;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class CommandeClientDto {
+
+	private String code;
+	private Instant dateCommande;
+	private Client client;
+	private List<LigneCommandeClient> listLigneCommandeClient;
+
+}

@@ -1,0 +1,17 @@
+package com.spring.demo.dto;
+
+import java.math.BigDecimal;
+import com.spring.demo.model.Ventes;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class LigneVenteDto {
+
+	private Integer id;
+	private Ventes vente;
+	private BigDecimal quantite;
+	private BigDecimal prixUnitaire;
+
+}

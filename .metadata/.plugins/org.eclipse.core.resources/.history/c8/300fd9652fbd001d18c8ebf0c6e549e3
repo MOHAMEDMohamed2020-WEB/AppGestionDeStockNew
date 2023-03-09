@@ -1,0 +1,64 @@
+package com.spring.demo.dto;
+
+import java.time.Instant;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.spring.demo.model.Adresse;
+import com.spring.demo.model.Entreprise;
+import com.spring.demo.model.Role;
+import com.spring.demo.model.Utilisiateur;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class UtilisiateurDto {
+
+	private Integer id;
+	private String nom;
+	private String prenom;
+	private Adresse adresse;
+	private Instant dateDeNaissance;
+	private String motDePasse;
+	private String photo;
+	private Entreprise entreprise;
+	@JsonIgnore
+	private List<Role> roles;
+	private String mail;
+	private String numTel;
+	
+	public static UtilisiateurDto fromEntity(Utilisiateur utilisiateur) {
+		if (utilisiateur == null)
+			return null;
+		return UtilisiateurDto.builder()
+				.id(utilisiateur.getId())
+				.nom(utilisiateur.getNom())
+				.prenom(utilisiateur.getPrenom())
+				.adresse(utilisiateur.getAdresse())
+				.dateDeNaissance(utilisiateur.getDateDeNaissance())
+				.motDePasse(utilisiateur.getMotDePasse())
+				.photo(utilisiateur.getPhoto())
+				.entreprise(utilisiateur.getEntreprise())
+				.mail(utilisiateur.getMail())
+				.numTel(utilisiateur.getNumTel())
+				.build();
+	}
+	public static Utilisiateur toEntity(UtilisiateurDto utilisiateurDto) {
+		if (utilisiateurDto == null)
+			return null;
+		Utilisiateur utilisiateur = new Utilisiateur();
+		utilisiateur.setId(utilisiateurDto.getId());
+		utilisiateur.setNom(utilisiateurDto.getNom());
+		utilisiateur.setPrenom(utilisiateurDto.getPrenom());
+		utilisiateur.setAdresse(utilisiateurDto.getAdresse());
+		utilisiateur.setMail(utilisiateurDto.getMail());
+		utilisiateur.setDateDeNaissance(utilisiateurDto.getDateDeNaissance());
+		utilisiateur.setMotDePasse(utilisiateurDto.getMotDePasse());
+		utilisiateur.setPhoto(utilisiateurDto.getPhoto());
+		utilisiateur.setEntreprise(utilisiateurDto.getEntreprise());
+		utilisiateur.setMail(utilisiateurDto.getMail());
+		utilisiateur.setNumTel(utilisiateurDto.getNumTel());		
+		return utilisiateur;
+	}
+
+}

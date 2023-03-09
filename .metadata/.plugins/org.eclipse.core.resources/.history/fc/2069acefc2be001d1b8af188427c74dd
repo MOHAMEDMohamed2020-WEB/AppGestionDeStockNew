@@ -1,0 +1,8 @@
+package handler;
+
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice  //on doit pas metter responsebody pour chaque méthode
+public class RestExceptionHandler {
+
+}

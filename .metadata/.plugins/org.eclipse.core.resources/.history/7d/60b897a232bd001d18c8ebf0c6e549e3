@@ -1,0 +1,65 @@
+package com.spring.demo.validator;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.util.StringUtils;
+import com.spring.demo.dto.UtilisiateurDto;
+
+public class UtilisateurValidator {
+
+	public static List<String> validate(UtilisiateurDto utilisiateurDto) {
+		List<String> errors = new ArrayList<>();
+
+		if (utilisiateurDto == null) {
+			errors.add("SVP enregistrer Nom d'utilisateur");
+			errors.add("SVP enregistrer Prenom d'utilisateur");
+			errors.add("SVP enregistrer d'adresse d'utilisateur");
+			errors.add("SVP enregistrer Email");
+			errors.add("SVP enregistrer dateDeNaissance");
+			errors.add("SVP enregistrer MotDePasse");
+			errors.add("SVP enregistrer NumTel");
+		} else {
+			if (!StringUtils.hasLength(utilisiateurDto.getNom())) {
+				errors.add("SVP enregistrer Nom d'utilisateur");
+			}
+			if (!StringUtils.hasLength(utilisiateurDto.getPrenom())) {
+				errors.add("SVP enregistrer Prenom d'utilisateur");
+			}
+
+			if (utilisiateurDto.getAdresse() == null) {
+				errors.add("SVP enregistrer d'adresse d'utilisateur");
+			} else {
+				if (!StringUtils.hasLength(utilisiateurDto.getAdresse().getAdresse1())) {
+					errors.add("SVP enregistrer Adresse1");
+				}
+				if (!StringUtils.hasLength(utilisiateurDto.getAdresse().getAdresse2())) {
+					errors.add("SVP enregistrer Adresse2");
+				}
+				if (!StringUtils.hasLength(utilisiateurDto.getAdresse().getVille())) {
+					errors.add("SVP enregistrer Ville");
+				}
+				if (!StringUtils.hasLength(utilisiateurDto.getAdresse().getCodePostal())) {
+					errors.add("SVP enregistrer CodePostal");
+				}
+				if (!StringUtils.hasLength(utilisiateurDto.getAdresse().getPaye())) {
+					errors.add("SVP enregistrer Paye");
+				}
+			}
+
+			if (!StringUtils.hasLength(utilisiateurDto.getMail())) {
+				errors.add("SVP enregistrer Email");
+			}
+			if (utilisiateurDto.getDateDeNaissance() == null) {
+				errors.add("SVP enregistrer dateDeNaissance");
+			}
+			if (!StringUtils.hasLength(utilisiateurDto.getMotDePasse())) {
+				errors.add("SVP enregistrer MotDePasse");
+			}
+			if (!StringUtils.hasLength(utilisiateurDto.getNumTel())) {
+				errors.add("SVP enregistrer NumTel");
+			}
+		}
+		return errors;
+	}
+
+}

@@ -1,0 +1,46 @@
+package com.spring.demo.dto;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.spring.demo.model.Adresse;
+import com.spring.demo.model.Categorie;
+import com.spring.demo.model.CommandeClient;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class ClientDto {
+
+	private Integer id;
+	private String nom;
+	private String prenom;
+	private Adresse adresse;
+	private String photo;
+	private String mail;
+	private String numTel;
+	@JsonIgnore
+	private List<CommandeClient> listCommandeClients;
+	
+	public ClientDto fromEntity(Client client) {
+		if (client == null)
+			return null;
+		return ClientDto.builder()
+				.id(client.getId())
+				.code(client.getCode())
+				.designation(client.getDesignation())
+				.build();
+	}
+	public Client toEntity(ClientDto clientDto) {
+		if (categorieDto == null)
+			return null;
+		Client client = new Client();
+		categorie.setId(clientDto.getId());
+		categorie.setCode(clientDto.getCode());
+		categorie.setDesignation(clientDto.getDesignation());
+		return categorie;
+	}
+}
+
+}

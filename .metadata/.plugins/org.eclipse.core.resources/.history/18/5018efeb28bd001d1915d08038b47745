@@ -1,0 +1,10 @@
+package com.spring.demo.validator;
+
+import java.util.List;
+
+import com.spring.demo.dto.CategorieDto;
+
+public class CategorieValidator {
+
+	
+}

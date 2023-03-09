@@ -1,0 +1,44 @@
+package com.spring.demo.dto;
+
+import java.math.BigDecimal;
+import java.time.Instant;
+import com.spring.demo.model.Article;
+import com.spring.demo.model.MtvStk;
+import com.spring.demo.model.TypeMvtStk;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class MtvStkDto {
+
+	private Integer id;
+	private Instant dateMvt;
+	private BigDecimal quantite;
+	private TypeMvtStk typeMvt;
+	private Article article;
+	
+	public static MtvStkDto fromEntity(MtvStk mtvStk) {
+		if (mtvStk == null)
+			return null;
+		return MtvStkDto.builder()
+				.id(mtvStk.getId())
+				.dateMvt(mtvStk.getDateMvt())
+				.quantite(mtvStk.getQuantite())
+				.typeMvt(mtvStk.getTypeMvt())
+				.article(mtvStk.getArticle())
+				.build();
+	}
+	public static MtvStk toEntity(MtvStkDto mtvStkDto) {
+		if (mtvStkDto == null)
+			return null;
+		MtvStk mtvStk = new MtvStk();
+		mtvStk.setId(mtvStkDto.getId());
+		mtvStk.setDateMvt(mtvStkDto.getDateMvt());
+		mtvStk.setQuantite(mtvStkDto.getQuantite());
+		mtvStk.setTypeMvt(mtvStkDto.getTypeMvt());
+		mtvStk.setArticle(mtvStkDto.getArticle());
+		return mtvStk;
+	}
+
+}

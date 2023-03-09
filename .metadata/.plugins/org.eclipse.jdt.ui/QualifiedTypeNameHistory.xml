@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.Builder"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.Adresse"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.Categorie"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.Client"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.CommandeClient"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.CommandeFournisseur"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.Entreprise"/>
+    <fullyQualifiedTypeName name="com.spring.demo.dto.FournisseurDto"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.Fournisseur"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.LigneCommandeClient"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.LigneCommandeFournisseur"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.LigneVente"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.MtvStk"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.Role"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.Utilisiateur"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+    <fullyQualifiedTypeName name="com.spring.demo.model.Ventes"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.spring.demo.dto.CategorieDto"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.springframework.util.StringUtils"/>
+    <fullyQualifiedTypeName name="com.spring.demo.dto.UtilisiateurDto"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,18 @@
+package com.spring.demo.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.spring.demo.model.Article;
+
+public interface ArticleRepository extends JpaRepository<Article, Integer> {
+
+	Article findByCodeArticle(String code);
+
+	@Query("select a from article where codearticle = :code and designation = :designation")
+	List<Article> findByCustomQuery(@Param("code") String c, @Param("designation") String d);
+
+}

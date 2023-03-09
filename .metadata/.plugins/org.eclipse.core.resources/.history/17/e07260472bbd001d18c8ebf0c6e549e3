@@ -1,0 +1,18 @@
+package com.spring.demo.validator;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.util.StringUtils;
+import com.spring.demo.dto.UtilisiateurDto;
+
+public class UtilisateurValidator {
+	
+	public static List<String> validate(UtilisiateurDto utilisiateurDto) {
+		List<String> errors = new ArrayList<>();
+		if (!StringUtils.hasLength(utilisiateurDto.getNom())) {
+			errors.add("SVP enregistrer Nom d'utilisateur");
+		}
+		return errors;
+	}
+
+}

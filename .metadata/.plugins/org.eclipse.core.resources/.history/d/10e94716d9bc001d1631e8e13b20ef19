@@ -1,0 +1,31 @@
+package com.spring.demo.dto;
+
+import java.math.BigDecimal;
+import java.util.List;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class ArticleDto {
+	private String codeArticle;
+	
+	private String designation;
+	
+	private BigDecimal prixUnitaireHt;
+	
+	private BigDecimal tauxTva;
+	
+	private BigDecimal prixUnitaireTtc;
+	
+	private String photo;
+	
+	private CategorieDto categorie;
+	
+	private List<LigneCommandeClientDto> listLigneCommandeClient;
+
+	private List<LigneCommandeFournisseurDto> listLigneCommandeFournissuer;
+
+	private List<MtvStkDto> listMvtStk;
+
+}

@@ -1,0 +1,20 @@
+package com.spring.demo.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.spring.demo.model.Article;
+
+public interface ArticleRepository extends JpaRepository<Article, Integer> {
+
+	Article findByCodeArticleIgnoreCase(String code);
+//JPQL
+	@Query("select a from Article a where a.codeArticle = :code and a.designation = :designation")
+	List<Article> findByCustomQuery(@Param("code") String c, @Param("designation") String d);
+	
+	//avec query native avec ,nativeQuery = true
+
+}

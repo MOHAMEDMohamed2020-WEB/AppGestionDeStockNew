@@ -1,0 +1,48 @@
+package com.spring.demo.dto;
+
+import java.math.BigDecimal;
+
+import com.spring.demo.model.Article;
+import com.spring.demo.model.CommandeClient;
+import com.spring.demo.model.Fournisseur;
+import com.spring.demo.model.LigneCommandeClient;
+
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+public class LigneCommandeClientDto {
+
+	private Integer id;
+	private Article article;
+	private CommandeClient commandeClient;
+	private BigDecimal quantite;
+	private BigDecimal prixUnitaire;
+	
+	public LigneCommandeClientDto fromEntity(LigneCommandeClient ligneCommandeClient) {
+		if (ligneCommandeClient == null)
+			return null;
+		return LigneCommandeClientDto.builder()
+				.id(ligneCommandeClient.getId())
+				.article(ligneCommandeClient.getArticle())
+				.commandeClient(ligneCommandeClient.getCommandeClient())
+				.quantite(ligneCommandeClient.getQuantite())
+				.prixUnitaire(ligneCommandeClient.getPrixUnitaire())
+				.build();
+	}
+	public LigneCommandeClient toEntity(LigneCommandeClientDto ligneCommandeClientDto) {
+		if (ligneCommandeClientDto == null)
+			return null;
+		LigneCommandeClient ligneCommandeClient = new LigneCommandeClient();
+		ligneCommandeClient.setId(ligneCommandeClientDto.getId());
+		ligneCommandeClient.setNom(ligneCommandeClientDto.getNom());
+		ligneCommandeClient.setPrenom(ligneCommandeClientDto.getPrenom());
+		ligneCommandeClient.setAdresse(ligneCommandeClientDto.getAdresse());
+		ligneCommandeClient.setPhoto(ligneCommandeClientDto.getPhoto());
+		ligneCommandeClient.setMail(ligneCommandeClientDto.getMail());
+		ligneCommandeClient.setNumTel(ligneCommandeClientDto.getNumTel());
+		return ligneCommandeClient;
+	}
+
+}

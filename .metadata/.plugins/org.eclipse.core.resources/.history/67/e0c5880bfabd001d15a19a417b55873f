@@ -1,0 +1,5 @@
+package com.spring.demo.exception;
+
+public enum ErrorCodes {
+
+}
